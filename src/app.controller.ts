@@ -12,4 +12,20 @@ export class AppController {
       title: 'My First NestJS App'
     }
   }
+
+  @Get('macskak')
+  @Render('macskak')
+  async getMacskak() {
+    return {
+      cats: await this.appService.getMacskak()
+    }
+  }
+
+  @Get('jatekok')
+  @Render('jatekok')
+  async getJatekok() {
+    return {
+      toys: await this.appService.getJatekok()
+    }
+  }
 }
