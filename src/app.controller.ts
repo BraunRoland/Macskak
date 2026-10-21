@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Post, Query, Render } from '@nestjs/common';
 import { AppService } from './app.service.js';
 import { CreateJatekDto } from './types/CreateJatek.dto.js';
+import { ModifyJatekDto } from './types/ModifyJatek.dto.js';
 
 @Controller()
 export class AppController {
@@ -40,7 +41,7 @@ export class AppController {
 
   @Get('ujJatek')
   @Render('ujJatek')
-  getUjjatek() {}
+  getUjJatek() {}
 
   @Post('ujJatek')
   @Render('ujJatek')
@@ -59,6 +60,16 @@ export class AppController {
           p: err.message
         }
       }
+    }
+  }
+  @Post('jatekok')
+  @Render('jatekok')
+  async ModifyJatek(@Body() body: ModifyJatekDto) {
+    if (body.action == 'update') {
+
+    }
+    else if (body.action == 'delete') {
+      
     }
   }
 }

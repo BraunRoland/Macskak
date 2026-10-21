@@ -10,3 +10,7 @@ export interface Jatek {
     id: number,
     nev: string
 }
+
+export interface ModifyJatek {
+    id: number;
+}
